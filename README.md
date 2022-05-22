@@ -34,26 +34,7 @@ API endpoints
 
 
 
-# Typescript-restful-starter
 
-## Structure
-```json
-/app
-	/controllers (Controllers of the app)
-	/middlewares (Middlewares for the routes of the app)
-	/routes (Routes for Controllers of the app)
-	/service (Services for using in any Controller)
-	/entity (Models configuration for use)
-	/repository (Custom queries)
-/config
-	/Router.ts (Config file for Routing)
-	/Database (DB configuration for use)
-	/Server.ts (Server configuration)
-config.ts (Config file for the app)
-tsconfig.json (File configuration typescript)
-tslint.json (File configuration rules typescript)
-Index.ts (Main file to start the app)
-```
 # Install
 1. First clone this repository.
 		
