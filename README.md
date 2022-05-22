@@ -1,13 +1,40 @@
+Nodejs + Typescript + Expressjs + Typeorm + Mysql 
+====================================================
+# Book-api
+An api system where the user borrows a book from the library and returns it
+
+# Start App
+When execute any of this commands the app start with clustering, creating many cluster apps depending of the numbers of CPU's your computer had.
+### Development: In Development mode, the express app is started with nodemon for automatic refresh when changes are made.
+	npm run dev
+### Test: Run test in development environment
+	npm test
+### Production: Run app in production environment
+	npm start
+
+API endpoints
+--------------------
+
+
+`/users` Post - User Create
+
+`/users`  Get - All User Get
+
+`/users/:id` Get - One User Get
+
+`/users/:id/borrow/:bookId` Put - Borrow Book
+
+`/users/:id/return/:bookId` Post - Return Book
+
+`/books` Post - Book Create
+
+`/books`  Get - All Book Get
+
+`/books/:id` Get - One Book Get
+
+
+
 # Typescript-restful-starter
-Node.js + ExpressJS + TypeOrm + Typescript + JWT + ES2015 + Clustering + Tslint + Mocha + Chai + Supertest
-------------
-# What use is this Starter App?
-- **JWT** for protecting routes.
-- **Clustering mode** for loading many forks depending of the CPU's units.
-- **Typeorm** for ORM.
-- **ES2015** the lastest javascript version has promises and async/await
-- **Mocha - Chai** for testing
-- **Supertest** to load the entire server into the tests seamlessly
 
 ## Structure
 ```json
@@ -30,7 +57,7 @@ Index.ts (Main file to start the app)
 # Install
 1. First clone this repository.
 		
-		git@github.com:camesine/Typescript-restful-starter.git
+		https://github.com/gulbaki/books-api-nodejs.git
 		
 2. Download all dependencies.
 
@@ -74,11 +101,4 @@ export const config = {
 }
 ```
 
-# Start App
-When execute any of this commands the app start with clustering, creating many cluster apps depending of the numbers of CPU's your computer had.
-### Development: In Development mode, the express app is started with nodemon for automatic refresh when changes are made.
-	npm run dev
-### Test: Run test in development environment
-	npm test
-### Production: Run app in production environment
-	npm start
+
