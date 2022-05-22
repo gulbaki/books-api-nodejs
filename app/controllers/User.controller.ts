@@ -33,7 +33,6 @@ export class UserController extends Controller {
             id: 0,
             name: "",
             books: {}
-
         };
         const present = [{}]
         const past = [{}];
@@ -81,6 +80,10 @@ export class UserController extends Controller {
 
         const user = await this.userService.findOneById(id);
         const book = await this.bookService.findOneById(bookId);
+        const userBook = await this.userBookService.findtwoById(id, bookId);
+
+        if (userBook)
+            return this.res.status(409).send({ message: "Book already available" });
 
         if (!user || !book) return this.res.status(404).send({ message: "not found" });
 
@@ -95,7 +98,7 @@ export class UserController extends Controller {
             return this.res.status(201).send({ borrow: borrow });
         } catch (ex) {
             console.log(ex);
-            return this.res.status(500).send({ message: "hata " });
+            return this.res.status(400).send({ message: "hata " });
         }
     }
 
@@ -111,13 +114,9 @@ export class UserController extends Controller {
         this.userBook.status = 2
 
         try {
-
             const property = await this.userBookService.findtwoById(id, bookId);
             this.userBook.id = property.id
-           
             const returnBook = await this.userBookService.update(this.userBook);
-
-
             return this.res.status(201).send({ returnBook: returnBook });
         } catch (ex) {
             console.log(ex);

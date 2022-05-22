@@ -28,12 +28,11 @@ export class BookController extends Controller {
         const avarage = await this.userBookService.avarageCalc(id);
         if (avarage.score !== null) book.score = avarage.score
 
-
-            if (book) {
-                return this.res.status(200).send(book);
-            } else {
-                return this.res.status(404).send({ message: "not found" });
-            }
+        if (book) {
+            return this.res.status(200).send(book);
+        } else {
+            return this.res.status(404).send({ message: "not found" });
+        }
     }
 
     public async create(): Promise<Response> {
